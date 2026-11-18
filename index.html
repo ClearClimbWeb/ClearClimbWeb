@@ -102,22 +102,20 @@
     .phone .screen iframe { width: 390px; height: 800px; }
 
     /* Hero */
-    .hero { padding: clamp(40px, 7vw, 88px) 0 var(--space); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
-    .hero h1 { font-size: var(--step-4); }
-    .hero h1 .mark { text-decoration: underline; text-decoration-thickness: .07em; text-underline-offset: .12em; }
-    .hero .lede { max-width: 34ch; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
-    .hero-facts { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 30px; list-style: none; font-size: 0.95rem; color: var(--muted); }
-    .hero-facts li { display: flex; align-items: center; gap: 8px; }
-    .hero-facts .icon { color: var(--ink); width: 18px; height: 18px; }
-    .showcase { position: relative; padding: 0 0 48px 48px; }
-    .showcase .browser { width: 100%; }
-    .showcase .phone { position: absolute; left: 0; bottom: 0; width: 25%; min-width: 108px; }
-    .showcase-link { position: absolute; inset: 0; z-index: 2; }
+    .hero { padding: clamp(56px, 9vw, 120px) 0 var(--space); }
+    .hero h1 { font-size: clamp(2.7rem, 1.4rem + 5.6vw, 6.6rem); max-width: 15ch; }
+    .hero h1 .mark { text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .12em; }
+    .hero-row { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 48px; align-items: end; margin-top: 40px; }
+    .hero .lede { margin-top: 0; max-width: 40ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(56px, 7vw, 96px); border-top: 1px solid var(--ink); }
+    .stats div { padding: 22px 24px 0 0; }
+    .stats div + div { padding-left: 24px; border-left: 1px solid var(--rule); }
+    .stats dt { font-family: var(--head); font-weight: 800; font-size: var(--step-2); letter-spacing: -0.02em; }
+    .stats dd { color: var(--muted); margin-top: 4px; font-size: 0.98rem; }
 
     /* Work */
-    .work { padding: var(--space) 0; border-top: 1px solid var(--rule); }
+    .work { padding: var(--space) 0; }
     .work-head { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 48px; align-items: end; margin-bottom: clamp(56px, 7vw, 96px); }
     .work-head p { color: var(--muted); font-size: 1.1rem; }
     .project { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(32px, 5vw, 72px); align-items: center; margin-bottom: clamp(72px, 9vw, 128px); }
@@ -230,7 +228,9 @@
       .menu.open a { display: block; padding: 12px 0; font-size: 1.1rem; color: var(--ink); }
     }
     @media (max-width: 900px) {
-      .hero-grid, .work-head, .prices-head, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-row, .work-head, .prices-head, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-row { gap: 28px; }
+      .hero-actions { justify-content: flex-start; }
       .project, .project.flip { grid-template-columns: 1fr; gap: 28px; }
       .project.flip .shot { order: 0; }
       .plan { grid-template-columns: 1fr; gap: 16px; }
@@ -249,7 +249,8 @@
       .nav-call .t { display: none; }
       .brand { font-size: 1.05rem; }
       .hero-actions .btn { width: 100%; }
-      .showcase { padding: 0 0 36px 30px; }
+      .stats { grid-template-columns: 1fr; }
+      .stats div, .stats div + div { padding: 16px 0; border-left: 0; border-bottom: 1px solid var(--rule); }
       .plan ul { columns: 1; }
       .row2, .foot { grid-template-columns: 1fr; }
     }
@@ -279,10 +280,10 @@
     <div class="wrap nav">
       <a href="#top" class="brand"><img src="logo-mark.png" alt="" width="40" height="40" /><span>Clear <em>Climb</em> Web</span></a>
       <ul class="menu" id="menu">
-        <li><a href="#work">Work</a></li>
         <li><a href="#prices">Prices</a></li>
         <li><a href="#process">How it works</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#work">Sample work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-end">
@@ -295,100 +296,24 @@
   <main id="top">
 
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="label">Web design in Florida</p>
-          <h1>Websites that make your business look as good as your <span class="mark">work.</span></h1>
+      <div class="wrap">
+        <p class="label">Web design in Florida</p>
+        <h1>Websites that make your business look as good as your <span class="mark">work.</span></h1>
+        <div class="hero-row">
           <p class="lede">I design and build sites for Florida small businesses. You see the design first, pay one set price, and get a site that's live in about a week.</p>
           <div class="hero-actions">
-            <a href="#work" class="btn btn-ink">See sample sites <span class="arrow" aria-hidden="true">→</span></a>
+            <a href="#contact" class="btn btn-ink">Get a free quote <span class="arrow" aria-hidden="true">→</span></a>
             <a href="tel:+19547039683" class="btn btn-line"><svg class="icon"><use href="#i-phone"/></svg>(954) 703-9683</a>
           </div>
-          <ul class="hero-facts">
-            <li><svg class="icon"><use href="#i-check"/></svg>From $299, paid once</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>You own the site</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Built for phones first</li>
-          </ul>
         </div>
-        <div class="showcase">
-          <div class="browser">
-            <div class="browser-bar"><i></i><i></i><i></i><span>coontie-landscapes · sample</span></div>
-            <div class="screen desk"><iframe src="samples/landscaping/#preview" title="Live preview of the landscaping sample site" tabindex="-1" loading="eager"></iframe></div>
-          </div>
-          <div class="phone"><div class="screen"><iframe src="samples/restaurant/#preview" title="Live phone preview of the restaurant sample site" tabindex="-1" loading="eager"></iframe></div></div>
-          <a class="showcase-link" href="#work" aria-label="See the sample sites"></a>
-        </div>
+        <dl class="stats">
+          <div><dt>$299</dt><dd>Starting price, paid once</dd></div>
+          <div><dt>~7 days</dt><dd>From first call to live site</dd></div>
+          <div><dt>1 person</dt><dd>Designs it, builds it, answers your calls</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section class="work" id="work">
-      <div class="wrap">
-        <div class="work-head">
-          <div>
-            <p class="label">Sample work</p>
-            <h2>Three businesses. Three sites that look nothing alike.</h2>
-          </div>
-          <p>These are sample sites for made-up Florida businesses, built so you can see what I can do. Each one is live: open it on your phone and click around. Yours starts from your business, not from a template.</p>
-        </div>
-
-        <article class="project">
-          <a class="shot" href="samples/landscaping/" aria-label="Open the landscaping sample site">
-            <div class="browser">
-              <div class="browser-bar"><i></i><i></i><i></i><span>coontie-landscapes · sample</span></div>
-              <div class="screen desk"><iframe src="samples/landscaping/#preview" title="Landscaping sample site" tabindex="-1" loading="lazy"></iframe></div>
-            </div>
-          </a>
-          <div>
-            <p class="num">01 <span class="tag">Sample · landscaper</span></p>
-            <h3>Coontie &amp; Co. Landscapes</h3>
-            <p>A Davie landscaper who wants more free yard visits booked. Prices up front, a calm earthy look, and a hand-drawn palm frond instead of stock photos.</p>
-            <ul class="notes">
-              <li><span>Goal</span><span>Book yard visits</span></li>
-              <li><span>Type</span><span>Fraunces + Instrument Sans</span></li>
-            </ul>
-            <a class="text-link" href="samples/landscaping/">Open the live sample <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-
-        <article class="project flip">
-          <a class="shot" href="samples/restaurant/" aria-label="Open the restaurant sample site">
-            <div class="browser">
-              <div class="browser-bar"><i></i><i></i><i></i><span>ninth-pier · sample</span></div>
-              <div class="screen desk"><iframe src="samples/restaurant/#preview" title="Restaurant sample site" tabindex="-1" loading="lazy"></iframe></div>
-            </div>
-          </a>
-          <div>
-            <p class="num">02 <span class="tag">Sample · restaurant</span></p>
-            <h3>Ninth Pier fish shack</h3>
-            <p>A Lantana fish shack where hungry people need three things fast: the menu, the hours and the phone number. The menu reads like the board on the wall.</p>
-            <ul class="notes">
-              <li><span>Goal</span><span>Calls to order</span></li>
-              <li><span>Type</span><span>Gloock + Karla</span></li>
-            </ul>
-            <a class="text-link" href="samples/restaurant/">Open the live sample <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-
-        <article class="project">
-          <a class="shot" href="samples/hvac/" aria-label="Open the AC repair sample site">
-            <div class="browser">
-              <div class="browser-bar"><i></i><i></i><i></i><span>northbound-air · sample</span></div>
-              <div class="screen desk"><iframe src="samples/hvac/#preview" title="AC repair sample site" tabindex="-1" loading="lazy"></iframe></div>
-            </div>
-          </a>
-          <div>
-            <p class="num">03 <span class="tag">Sample · AC repair</span></p>
-            <h3>Northbound Air</h3>
-            <p>An AC company where the visitor is sweating and wants a call answered now. A giant phone number, prices on a work ticket, and nothing in the way.</p>
-            <ul class="notes">
-              <li><span>Goal</span><span>Same-day calls</span></li>
-              <li><span>Type</span><span>Barlow Condensed + Barlow</span></li>
-            </ul>
-            <a class="text-link" href="samples/hvac/">Open the live sample <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-      </div>
-    </section>
 
     <section class="prices" id="prices">
       <div class="wrap">
@@ -461,6 +386,75 @@
             <li><strong>You own it</strong><span>Once it's paid for, the site and its files are yours.</span></li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="work-head">
+          <div>
+            <p class="label">Sample work</p>
+            <h2>Three businesses. Three sites that look nothing alike.</h2>
+          </div>
+          <p>These are sample sites for made-up Florida businesses, built so you can see what I can do. Each one is live: open it on your phone and click around. Yours starts from your business, not from a template.</p>
+        </div>
+
+        <article class="project">
+          <a class="shot" href="samples/landscaping/" aria-label="Open the landscaping sample site">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>coontie-landscapes · sample</span></div>
+              <div class="screen desk"><iframe src="samples/landscaping/#preview" title="Landscaping sample site" tabindex="-1" loading="lazy"></iframe></div>
+            </div>
+          </a>
+          <div>
+            <p class="num">01 <span class="tag">Sample · landscaper</span></p>
+            <h3>Coontie &amp; Co. Landscapes</h3>
+            <p>A Davie landscaper who wants more free yard visits booked. Prices up front, a calm earthy look, and a hand-drawn palm frond instead of stock photos.</p>
+            <ul class="notes">
+              <li><span>Goal</span><span>Book yard visits</span></li>
+              <li><span>Type</span><span>Fraunces + Instrument Sans</span></li>
+            </ul>
+            <a class="text-link" href="samples/landscaping/">Open the live sample <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="project flip">
+          <a class="shot" href="samples/restaurant/" aria-label="Open the restaurant sample site">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>ninth-pier · sample</span></div>
+              <div class="screen desk"><iframe src="samples/restaurant/#preview" title="Restaurant sample site" tabindex="-1" loading="lazy"></iframe></div>
+            </div>
+          </a>
+          <div>
+            <p class="num">02 <span class="tag">Sample · restaurant</span></p>
+            <h3>Ninth Pier fish shack</h3>
+            <p>A Lantana fish shack where hungry people need three things fast: the menu, the hours and the phone number. The menu reads like the board on the wall.</p>
+            <ul class="notes">
+              <li><span>Goal</span><span>Calls to order</span></li>
+              <li><span>Type</span><span>Gloock + Karla</span></li>
+            </ul>
+            <a class="text-link" href="samples/restaurant/">Open the live sample <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="project">
+          <a class="shot" href="samples/hvac/" aria-label="Open the AC repair sample site">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span>northbound-air · sample</span></div>
+              <div class="screen desk"><iframe src="samples/hvac/#preview" title="AC repair sample site" tabindex="-1" loading="lazy"></iframe></div>
+            </div>
+          </a>
+          <div>
+            <p class="num">03 <span class="tag">Sample · AC repair</span></p>
+            <h3>Northbound Air</h3>
+            <p>An AC company where the visitor is sweating and wants a call answered now. A giant phone number, prices on a work ticket, and nothing in the way.</p>
+            <ul class="notes">
+              <li><span>Goal</span><span>Same-day calls</span></li>
+              <li><span>Type</span><span>Barlow Condensed + Barlow</span></li>
+            </ul>
+            <a class="text-link" href="samples/hvac/">Open the live sample <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
       </div>
     </section>
 

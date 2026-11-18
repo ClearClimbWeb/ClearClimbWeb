@@ -64,7 +64,9 @@
     .signs { padding: 88px 0; }
     .signs h2, .plans h2, .area h2 { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); margin-bottom: 14px; }
     .lede { color: var(--muted); max-width: 54ch; font-size: 1.1rem; }
-    .sign-list { list-style: none; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+    .signs-grid { display: grid; grid-template-columns: 7fr 5fr; gap: 56px; align-items: center; }
+    .signs-img { width: 100%; height: auto; aspect-ratio: 720 / 900; object-fit: cover; border-radius: var(--radius); display: block; }
+    .sign-list { list-style: none; margin-top: 40px; display: grid; grid-template-columns: 1fr; }
     .sign-list li { display: grid; grid-template-columns: 40px 1fr; padding: 18px 0; border-top: 2px solid var(--ink); }
     .sign-list b { font-family: var(--head); font-size: 1.4rem; color: var(--accent-ink); }
     .sign-list strong { display: block; font-size: 1.12rem; }
@@ -94,7 +96,8 @@
     @media (max-width: 860px) {
       header nav { display: none; }
       .hero-grid, .plan-row { grid-template-columns: 1fr; gap: 48px; }
-      .sign-list { grid-template-columns: 1fr; }
+      .signs-grid { grid-template-columns: 1fr; }
+      .signs-img { aspect-ratio: 4 / 3; }
     }
     @media (max-width: 480px) { .phone-btn .t { display: none; } }
   </style>
@@ -134,6 +137,8 @@
 
     <section class="signs">
       <div class="wrap">
+        <div class="signs-grid">
+        <div>
         <h2>When to call before it gets worse</h2>
         <p class="lede">Most Florida AC failures give a warning first. Catching it early is usually the cheaper fix.</p>
         <ul class="sign-list">
@@ -142,6 +147,9 @@
           <li><b>3</b><div><strong>Clicking, humming or buzzing</strong><span>Electrical parts wearing out. Worth a look this week.</span></div></li>
           <li><b>4</b><div><strong>Power bill jumped</strong><span>Dirty coils or a struggling motor working overtime.</span></div></li>
         </ul>
+        </div>
+        <img class="signs-img" src="https://images.unsplash.com/photo-1776860150305-108ed577d7d4?w=720&h=900&fit=crop&auto=format&q=70" srcset="https://images.unsplash.com/photo-1776860150305-108ed577d7d4?w=720&h=900&fit=crop&auto=format&q=70 1x, https://images.unsplash.com/photo-1776860150305-108ed577d7d4?w=1440&h=1800&fit=crop&auto=format&q=60 2x" width="720" height="900" alt="An outdoor AC unit beside a house, surrounded by shrubs" loading="lazy" />
+        </div>
       </div>
     </section>
 
@@ -180,7 +188,7 @@
     </section>
   </main>
 
-  <footer><div class="wrap"><span>© 2026 Northbound Air (fictional) · Pembroke Pines, FL</span><span>Sample design by <a href="/">Clear Climb Web</a></span></div></footer>
+  <footer><div class="wrap"><span>© 2026 Northbound Air (fictional) · Pembroke Pines, FL</span><span>Photos from Unsplash · Sample design by <a href="/">Clear Climb Web</a></span></div></footer>
   <script>if (location.hash === '#preview') document.body.classList.add('preview');</script>
 </body>
 </html>
