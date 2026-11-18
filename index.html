@@ -34,13 +34,13 @@
   </script>
   <style>
     :root {
-      --paper: #f6f4ee;
-      --paper-2: #ece8dc;
-      --ink: #141414;
-      --muted: #55585d;
-      --rule: #dcd7ca;
+      --paper: #fafaf8;
+      --paper-2: #f0f0ec;
+      --ink: #111111;
+      --muted: #5b5d61;
+      --rule: #e1e1dc;
       --accent: #b8f02a;
-      --accent-ink: #4a7300;
+      --accent-ink: #111111;
       --head: 'Bricolage Grotesque', 'Arial Black', sans-serif;
       --body: 'Figtree', Arial, sans-serif;
       --step-1: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);
@@ -62,8 +62,8 @@
     p { max-width: 62ch; }
     :focus-visible { outline: 3px solid var(--accent-ink); outline-offset: 3px; }
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-    .label { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
-    .label::before { content: ""; width: 22px; height: 3px; background: var(--accent); }
+    .label { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .label::before { content: ""; width: 22px; height: 2px; background: currentColor; }
     .lede { font-size: var(--step-1); color: var(--muted); line-height: 1.5; margin-top: 20px; }
 
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 14px 26px; border-radius: var(--radius); font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid var(--ink); cursor: pointer; font-family: var(--body); transition: background .15s, color .15s, transform .15s; }
@@ -76,11 +76,11 @@
     .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
     /* Header */
-    header { position: sticky; top: 0; z-index: 40; background: rgba(246,244,238,.92); backdrop-filter: saturate(1.4) blur(8px); -webkit-backdrop-filter: saturate(1.4) blur(8px); }
+    header { position: sticky; top: 0; z-index: 40; background: rgba(250,250,248,.92); backdrop-filter: saturate(1.4) blur(8px); -webkit-backdrop-filter: saturate(1.4) blur(8px); }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 76px; }
     .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-family: var(--head); font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; white-space: nowrap; }
     .brand img { width: 40px; height: 40px; border-radius: 50%; }
-    .brand em { font-style: normal; color: var(--accent-ink); }
+    .brand em { font-style: normal; color: inherit; }
     .menu { display: flex; gap: 30px; list-style: none; }
     .menu a { text-decoration: none; font-weight: 500; color: var(--muted); }
     .menu a:hover { color: var(--ink); }
@@ -106,12 +106,12 @@
     .hero { padding: clamp(40px, 7vw, 88px) 0 var(--space); }
     .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
     .hero h1 { font-size: var(--step-4); }
-    .hero h1 .mark { background: linear-gradient(transparent 64%, var(--accent) 64%, var(--accent) 92%, transparent 92%); padding: 0 .06em; }
+    .hero h1 .mark { text-decoration: underline; text-decoration-thickness: .07em; text-underline-offset: .12em; }
     .hero .lede { max-width: 34ch; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
     .hero-facts { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 30px; list-style: none; font-size: 0.95rem; color: var(--muted); }
     .hero-facts li { display: flex; align-items: center; gap: 8px; }
-    .hero-facts .icon { color: var(--accent-ink); width: 18px; height: 18px; }
+    .hero-facts .icon { color: var(--ink); width: 18px; height: 18px; }
     .showcase { position: relative; padding: 0 0 48px 48px; }
     .showcase .browser { width: 100%; }
     .showcase .phone { position: absolute; left: 0; bottom: 0; width: 25%; min-width: 108px; }
@@ -128,7 +128,7 @@
     .shot { display: block; text-decoration: none; transition: transform .25s; }
     .shot:hover { transform: translateY(-4px); }
     .num { font-family: var(--head); font-weight: 800; font-size: 1rem; color: var(--muted); display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
-    .num .tag { font-family: var(--body); font-size: 0.75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--paper-2); color: var(--muted); padding: 4px 8px; border-radius: 4px; }
+    .num .tag { font-family: var(--body); font-size: 0.75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 3px 8px; border: 1px solid var(--rule); border-radius: 4px; }
     .project h3 { font-size: var(--step-2); margin-bottom: 12px; }
     .project p { color: var(--muted); }
     .notes { list-style: none; margin: 22px 0 26px; border-top: 1px solid var(--rule); }
@@ -137,8 +137,8 @@
     .notes li span:last-child { font-weight: 600; text-align: right; }
     .sw { display: inline-flex; gap: 5px; vertical-align: middle; }
     .sw i { width: 16px; height: 16px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
-    .text-link { font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 2px; display: inline-flex; gap: 8px; align-items: center; min-height: 44px; }
-    .text-link:hover { border-color: var(--ink); }
+    .text-link { font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--ink); padding-bottom: 2px; display: inline-flex; gap: 8px; align-items: center; min-height: 44px; }
+    .text-link:hover { border-color: var(--muted); color: var(--muted); }
 
     /* Prices */
     .prices { padding: var(--space) 0; background: var(--paper-2); }
@@ -148,10 +148,10 @@
     .plan:last-of-type { border-bottom: 2px solid var(--ink); }
     .plan h3 { font-size: var(--step-2); }
     .plan .for { color: var(--muted); margin-top: 8px; font-size: 0.98rem; }
-    .plan .pick { display: inline-block; background: var(--accent); font-size: 0.75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 9px; border-radius: 4px; margin-bottom: 10px; }
+    .plan .pick { display: inline-block; background: var(--ink); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 9px; border-radius: 4px; margin-bottom: 10px; }
     .plan ul { list-style: none; columns: 2; column-gap: 28px; }
     .plan li { padding: 4px 0 4px 22px; position: relative; break-inside: avoid; }
-    .plan li::before { content: ""; position: absolute; left: 0; top: 13px; width: 10px; height: 2px; background: var(--accent-ink); }
+    .plan li::before { content: ""; position: absolute; left: 0; top: 13px; width: 10px; height: 1.5px; background: var(--muted); }
     .plan .cost { text-align: right; }
     .plan .cost strong { display: block; font-family: var(--head); font-weight: 800; font-size: var(--step-3); line-height: 1; }
     .plan .cost span { font-size: 0.9rem; color: var(--muted); }
@@ -170,15 +170,16 @@
     .steps li:nth-child(1) { margin-top: 120px; }
     .steps li:nth-child(2) { margin-top: 80px; }
     .steps li:nth-child(3) { margin-top: 40px; }
-    .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--ink); border: 4px solid var(--accent); margin-bottom: 18px; }
+    .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--paper); border: 3px solid var(--ink); margin-bottom: 18px; }
     .steps li:last-child .dot { width: 26px; height: 26px; background: var(--accent); border-color: var(--ink); }
     .steps h3 { font-size: 1.35rem; margin-bottom: 8px; }
     .steps p { color: var(--muted); font-size: 0.98rem; }
-    .steps small { display: block; font-weight: 600; color: var(--accent-ink); margin-bottom: 4px; font-size: 0.85rem; letter-spacing: .04em; text-transform: uppercase; }
+    .steps small { display: block; font-weight: 600; color: var(--muted); margin-bottom: 4px; font-size: 0.85rem; letter-spacing: .04em; text-transform: uppercase; }
 
     /* About */
     .about { background: var(--ink); color: #f1efe8; padding: var(--space) 0; }
     .about .label { color: var(--accent); }
+    .about .label::before { background: var(--accent); }
     .about-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(40px, 6vw, 96px); }
     .about h2 { max-width: 20ch; }
     .about p { color: #bdbab1; font-size: 1.08rem; margin-top: 18px; }
@@ -197,7 +198,7 @@
     /* Contact */
     .contact { padding: var(--space) 0; }
     .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
-    .big-phone { display: inline-block; font-family: var(--head); font-weight: 800; font-size: var(--step-3); letter-spacing: -0.02em; text-decoration: none; line-height: 1.1; margin-top: 28px; background: linear-gradient(transparent 70%, var(--accent) 70%); }
+    .big-phone { display: inline-block; font-family: var(--head); font-weight: 800; font-size: var(--step-3); letter-spacing: -0.02em; text-decoration: none; line-height: 1.1; margin-top: 28px; }
     .contact .alt { margin-top: 14px; color: var(--muted); }
     .contact .alt a { color: var(--ink); font-weight: 600; }
     form { display: grid; gap: 16px; }
@@ -205,7 +206,7 @@
     label { display: block; font-weight: 600; font-size: 0.92rem; margin-bottom: 6px; }
     input, select, textarea { width: 100%; font: inherit; font-size: 1rem; color: var(--ink); background: #fff; border: 1.5px solid #cfcabd; border-radius: var(--radius); padding: 12px 14px; min-height: 50px; }
     textarea { min-height: 130px; resize: vertical; }
-    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px var(--accent); }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(17,17,17,.12); }
     .hp { position: absolute; left: -9999px; }
     .form-note { font-size: 0.88rem; color: var(--muted); }
     .form-status { font-weight: 700; min-height: 1.5em; }
@@ -237,7 +238,7 @@
       .plan .cost { text-align: left; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
       .plan .cost a { margin-top: 0; }
       .route svg.path { display: none; }
-      .steps { grid-template-columns: 1fr; gap: 0; border-left: 3px dotted var(--accent-ink); margin-left: 8px; }
+      .steps { grid-template-columns: 1fr; gap: 0; border-left: 2px dotted #a3a4a6; margin-left: 8px; }
       .steps li, .steps li:nth-child(n) { margin-top: 0; padding: 0 0 32px 28px; position: relative; }
       .steps .dot { position: absolute; left: -11px; top: 2px; }
       .steps li:last-child .dot { left: -15px; }
@@ -251,6 +252,11 @@
       .showcase { padding: 0 0 36px 30px; }
       .plan ul { columns: 1; }
       .row2, .foot { grid-template-columns: 1fr; }
+    }
+    #mcb-widget-portal .mcb-pointer-events-auto.mcb-topmost { inset: auto 16px 16px auto !important; }
+    @media (max-width: 560px) {
+      #mcb-widget-portal .mcb-pointer-events-auto.mcb-topmost { inset: auto 12px 12px auto !important; }
+      #mcb-widget-portal [class*="mcb-right-full"] { display: none !important; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -337,7 +343,6 @@
             <ul class="notes">
               <li><span>Goal</span><span>Book yard visits</span></li>
               <li><span>Type</span><span>Fraunces + Instrument Sans</span></li>
-              <li><span>Colors</span><span class="sw"><i style="background:#f4eee1"></i><i style="background:#1f3a2b"></i><i style="background:#c8623a"></i></span></li>
             </ul>
             <a class="text-link" href="samples/landscaping/">Open the live sample <span aria-hidden="true">→</span></a>
           </div>
@@ -357,7 +362,6 @@
             <ul class="notes">
               <li><span>Goal</span><span>Calls to order</span></li>
               <li><span>Type</span><span>Gloock + Karla</span></li>
-              <li><span>Colors</span><span class="sw"><i style="background:#fbf6ea"></i><i style="background:#161412"></i><i style="background:#d8432b"></i></span></li>
             </ul>
             <a class="text-link" href="samples/restaurant/">Open the live sample <span aria-hidden="true">→</span></a>
           </div>
@@ -377,7 +381,6 @@
             <ul class="notes">
               <li><span>Goal</span><span>Same-day calls</span></li>
               <li><span>Type</span><span>Barlow Condensed + Barlow</span></li>
-              <li><span>Colors</span><span class="sw"><i style="background:#f3f6f9"></i><i style="background:#0f2340"></i><i style="background:#ff6a13"></i></span></li>
             </ul>
             <a class="text-link" href="samples/hvac/">Open the live sample <span aria-hidden="true">→</span></a>
           </div>
@@ -429,7 +432,7 @@
         <p class="label">How it works</p>
         <h2>From a 10-minute call to a live site in about a week.</h2>
         <div class="route">
-          <svg class="path" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"><path d="M8 130 C 140 130, 180 92, 262 92 S 390 52, 515 52 S 650 12, 770 12" fill="none" stroke="#4a7300" stroke-width="3" stroke-dasharray="1 9" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+          <svg class="path" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"><path d="M8 130 C 140 130, 180 92, 262 92 S 390 52, 515 52 S 650 12, 770 12" fill="none" stroke="#a3a4a6" stroke-width="3" stroke-dasharray="1 9" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
           <ol class="steps">
             <li><div class="dot"></div><small>Day 1</small><h3>A quick call</h3><p>Ten minutes about your business, your customers and what you want them to do.</p></li>
             <li><div class="dot"></div><small>Days 2 to 3</small><h3>You see the design</h3><p>I send your homepage design. Nothing gets built until you say yes.</p></li>
