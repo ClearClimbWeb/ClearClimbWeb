@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clear Climb Web</title>
   <meta name="description" content="Clear Climb Web builds fast, beautiful websites for businesses ready to grow online." />
+  <link rel="icon" type="image/png" href="logo-icon.png" />
+  <link rel="apple-touch-icon" href="logo-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -46,6 +48,8 @@
       text-decoration: none; color: var(--black);
     }
     .nav-logo span { color: var(--lime-dk); }
+    .nav-logo, .footer-logo { display: inline-flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 36px; height: 36px; flex-shrink: 0; }
 
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
@@ -358,7 +362,7 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">Clear <span>Climb</span> Web</a>
+    <a href="#" class="nav-logo"><img src="logo.png" alt="Clear Climb Web" style="height:54px;width:auto;border-radius:8px;display:block;" /></a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#maintenance">Maintenance</a></li>
@@ -492,7 +496,7 @@
       <div class="process-step">
         <div class="step-num">01</div>
         <div class="step-title">Discovery Call</div>
-        <div class="step-desc">We learn your business, goals and what your customers need. 30 minutes is all it takes to get aligned.</div>
+        <div class="step-desc">We learn your business, goals and what your customers need. 10 minutes is all it takes to get aligned.</div>
       </div>
       <div class="process-step">
         <div class="step-num">02</div>
@@ -783,7 +787,7 @@
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-logo">Clear <span>Climb</span> Web</div>
+        <div class="footer-logo"><img src="logo.png" alt="Clear Climb Web" style="height:80px;width:auto;display:block;" /></div>
         <p class="footer-desc">We build websites that help Florida businesses get found online and turn visitors into customers. Fast, beautiful, and built to grow.</p>
       </div>
       <div class="footer-col">
@@ -993,6 +997,23 @@
           window.scrollTo({ top, behavior: 'smooth' });
         }
       });
+    });
+  </script>
+  <!-- MYCHATBOT WIDGET -->
+  <link rel="stylesheet" href="https://storage.googleapis.com/mychatbot-widget-assets/v1/style.css" />
+  <script src="https://storage.googleapis.com/mychatbot-widget-assets/v1/widget.js"></script>
+  <div id="my-chat-widget-container"></div>
+  <script>
+    MyChatBot.mount('#my-chat-widget-container', {
+      account_id: "9fd5c7e4-4a4f-44eb-ac74-d5fc33c3d401",
+      widget_id: "main-site",
+      api_url: 'https://api.mychatbot.app',
+      assistant_name: "Clearclimbweb Assistant",
+      color: "#0a0a0a",
+      lang: 'en',
+      ad_widget_title: 'Chat with Clear Climb Web',
+      ad_widget_description: 'Get a free website quote in minutes',
+      ad_popup_messages: ['👋 Need a website? Ask me about pricing!']
     });
   </script>
 </body>
