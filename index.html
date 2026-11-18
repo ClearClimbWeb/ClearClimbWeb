@@ -1002,6 +1002,15 @@
   <!-- MYCHATBOT WIDGET -->
   <link rel="stylesheet" href="https://storage.googleapis.com/mychatbot-widget-assets/v1/style.css" />
   <script src="https://storage.googleapis.com/mychatbot-widget-assets/v1/widget.js"></script>
+  <style>
+    /* Replace the chat widget's stock avatar with the Clear Climb Web logo */
+    #my-chat-widget-container img:not(.ccw-keep) {
+      content: url("logo-circle.png") !important;
+      object-fit: cover !important;
+      border-radius: 50% !important;
+      background: #000 !important;
+    }
+  </style>
   <div id="my-chat-widget-container"></div>
   <script>
     MyChatBot.mount('#my-chat-widget-container', {
