@@ -39,7 +39,6 @@
       --ink: #111111;
       --muted: #5b5d61;
       --rule: #e1e1dc;
-      --accent: #b8f02a;
       --accent-ink: #111111;
       --head: 'Bricolage Grotesque', 'Arial Black', sans-serif;
       --body: 'Figtree', Arial, sans-serif;
@@ -171,15 +170,15 @@
     .steps li:nth-child(2) { margin-top: 80px; }
     .steps li:nth-child(3) { margin-top: 40px; }
     .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--paper); border: 3px solid var(--ink); margin-bottom: 18px; }
-    .steps li:last-child .dot { width: 26px; height: 26px; background: var(--accent); border-color: var(--ink); }
+    .steps li:last-child .dot { width: 26px; height: 26px; background: var(--ink); border-color: var(--ink); box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px var(--ink); }
     .steps h3 { font-size: 1.35rem; margin-bottom: 8px; }
     .steps p { color: var(--muted); font-size: 0.98rem; }
     .steps small { display: block; font-weight: 600; color: var(--muted); margin-bottom: 4px; font-size: 0.85rem; letter-spacing: .04em; text-transform: uppercase; }
 
     /* About */
     .about { background: var(--ink); color: #f1efe8; padding: var(--space) 0; }
-    .about .label { color: var(--accent); }
-    .about .label::before { background: var(--accent); }
+    .about .label { color: #a9a69d; }
+    .about .label::before { background: currentColor; }
     .about-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(40px, 6vw, 96px); }
     .about h2 { max-width: 20ch; }
     .about p { color: #bdbab1; font-size: 1.08rem; margin-top: 18px; }
@@ -215,12 +214,12 @@
     footer { background: var(--ink); color: #a9a69d; padding: 56px 0 32px; font-size: 0.95rem; }
     .foot { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
     footer .brand { color: #fff; margin-bottom: 12px; }
-    footer .brand em { color: var(--accent); }
+    footer .brand em { color: inherit; }
     footer h4 { color: #fff; font-family: var(--head); font-size: 1rem; margin-bottom: 12px; }
     footer ul { list-style: none; }
     footer li { margin-bottom: 8px; }
     footer a { text-decoration: none; }
-    footer a:hover { color: var(--accent); }
+    footer a:hover { color: #fff; }
     .foot-end { border-top: 1px solid #2c2c2c; padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 
     /* Responsive */

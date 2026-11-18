@@ -1,4 +1,4 @@
-:root { --ink:#111111; --muted:#5b5d61; --rule:#e1e1dc; --accent:#b8f02a; --accent-ink:#111111; }
+:root { --ink:#111111; --muted:#5b5d61; --rule:#e1e1dc; --accent-ink:#111111; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { background:#fafaf8; font-family:'Figtree',Arial,sans-serif; color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; }
 header { border-bottom:1px solid var(--rule); }
