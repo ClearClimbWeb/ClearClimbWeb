@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AC Repair in Pembroke Pines, FL | Northbound Air (sample design)</title>
+  <meta name="description" content="Sample website design by Clear Climb Web for a fictional AC repair company in Pembroke Pines, Florida. Same-day repair, upfront prices, call now." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f2340'/%3E%3Cpath d='M16 5v22M6.5 10.5l19 11M6.5 21.5l19-11' stroke='%23ff6a13' stroke-width='3'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f3f6f9;
+      --ink: #0f2340;
+      --muted: #4a5a70;
+      --rule: #d3dbe5;
+      --accent: #ff6a13;
+      --accent-ink: #b84300;
+      --head: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      --body: 'Barlow', Arial, sans-serif;
+      --radius: 4px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--body); background: var(--paper); color: var(--ink); line-height: 1.55; font-size: 1.05rem; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { font-family: var(--head); font-weight: 800; text-transform: uppercase; line-height: 0.95; letter-spacing: 0.005em; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+    .sample-bar { background: #111; color: #ddd; font-size: 0.82rem; text-align: center; padding: 8px 16px; }
+    .sample-bar a { color: #b8f02a; }
+    body.preview .sample-bar { display: none; }
+
+    header { background: var(--ink); color: #fff; }
+    header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 16px; padding-bottom: 16px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--head); font-weight: 800; font-size: 1.6rem; text-transform: uppercase; letter-spacing: .02em; }
+    .logo svg { width: 30px; height: 30px; }
+    header nav { display: flex; gap: 24px; font-weight: 500; }
+    header nav a { text-decoration: none; color: #c7d2e2; }
+    header nav a:hover { color: #fff; }
+    .phone-btn { display: inline-flex; align-items: center; min-height: 46px; padding: 10px 18px; background: var(--accent); color: #111; font-weight: 700; text-decoration: none; border-radius: var(--radius); white-space: nowrap; font-family: var(--head); font-size: 1.25rem; letter-spacing: .02em; }
+
+    .hero { background: var(--ink); color: #fff; padding: 48px 0 80px; }
+    .hero-grid { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: center; }
+    .eyebrow { font-family: var(--head); font-weight: 700; font-size: 1.15rem; letter-spacing: .08em; color: var(--accent); text-transform: uppercase; }
+    .hero h1 { font-size: clamp(3rem, 1.6rem + 6vw, 6.6rem); margin: 12px 0 20px; }
+    .hero p { color: #c7d2e2; font-size: 1.2rem; max-width: 40ch; margin-bottom: 28px; }
+    .bignum { display: inline-block; font-family: var(--head); font-weight: 800; font-size: clamp(2.2rem, 1.4rem + 3vw, 3.4rem); text-decoration: none; color: var(--accent); border-bottom: 4px solid var(--accent); line-height: 1.1; }
+    .bignum-note { display: block; font-size: 0.95rem; color: #9fb0c8; margin-top: 10px; }
+
+    .ticket { background: #fff; color: var(--ink); border-radius: var(--radius); padding: 26px 26px 22px; position: relative; }
+    .ticket::before, .ticket::after { content: ""; position: absolute; left: -10px; right: -10px; height: 14px; background: radial-gradient(circle at 7px 7px, var(--ink) 6px, transparent 6.5px) repeat-x; background-size: 20px 14px; }
+    .ticket::before { top: -7px; }
+    .ticket::after { bottom: -7px; }
+    .ticket h2 { font-size: 1.6rem; margin-bottom: 4px; }
+    .ticket .sm { font-size: 0.85rem; color: var(--muted); margin-bottom: 14px; }
+    .ticket table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+    .ticket td { padding: 9px 0; border-bottom: 1px dashed var(--rule); }
+    .ticket td:last-child { text-align: right; font-family: var(--head); font-weight: 700; font-size: 1.25rem; }
+    .ticket .foot { font-size: 0.85rem; color: var(--muted); margin-top: 12px; }
+
+    .signs { padding: 88px 0; }
+    .signs h2, .plans h2, .area h2 { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); margin-bottom: 14px; }
+    .lede { color: var(--muted); max-width: 54ch; font-size: 1.1rem; }
+    .sign-list { list-style: none; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+    .sign-list li { display: grid; grid-template-columns: 40px 1fr; padding: 18px 0; border-top: 2px solid var(--ink); }
+    .sign-list b { font-family: var(--head); font-size: 1.4rem; color: var(--accent-ink); }
+    .sign-list strong { display: block; font-size: 1.12rem; }
+    .sign-list span { color: var(--muted); }
+
+    .plans { background: #fff; padding: 88px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .plan-row { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+    .plan-box { border: 3px solid var(--ink); border-radius: var(--radius); padding: 28px; }
+    .plan-box .price { font-family: var(--head); font-weight: 800; font-size: 3.4rem; line-height: 1; }
+    .plan-box .price small { font-size: 1.2rem; color: var(--muted); }
+    .plan-box ul { list-style: none; margin: 18px 0 22px; }
+    .plan-box li { padding: 8px 0; border-bottom: 1px solid var(--rule); }
+    .plan-box li::before { content: "+ "; color: var(--accent-ink); font-weight: 700; }
+
+    .area { padding: 88px 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .chips span { border: 2px solid var(--ink); border-radius: var(--radius); padding: 8px 14px; font-weight: 600; }
+
+    .final { background: var(--accent); color: #111; padding: 64px 0; }
+    .final .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+    .final h2 { font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); max-width: 14ch; }
+    .final a { display: inline-flex; align-items: center; min-height: 56px; padding: 14px 28px; background: var(--ink); color: #fff; text-decoration: none; font-family: var(--head); font-weight: 800; font-size: 1.6rem; border-radius: var(--radius); }
+
+    footer { padding: 28px 0; color: var(--muted); font-size: 0.9rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+    @media (max-width: 860px) {
+      header nav { display: none; }
+      .hero-grid, .plan-row { grid-template-columns: 1fr; gap: 48px; }
+      .sign-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) { .phone-btn .t { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="sample-bar">Sample design by <a href="/">Clear Climb Web</a>. Northbound Air is a made-up business.</div>
+
+  <header><div class="wrap">
+    <a class="logo" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3v26M4.7 9.5l22.6 13M4.7 22.5l22.6-13" stroke="#ff6a13" stroke-width="3"/></svg>Northbound Air</a>
+    <nav aria-label="Main"><a href="#prices">Prices</a><a href="#plan">Tune-up plan</a><a href="#area">Service area</a></nav>
+    <a class="phone-btn" href="tel:+19545550163">Call<span class="t">&nbsp;(954) 555-0163</span></a>
+  </div></header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Pembroke Pines AC repair</p>
+          <h1>AC out? We can usually be there today.</h1>
+          <p>Licensed techs, a price before we touch anything, and a truck stocked for the common fixes.</p>
+          <a class="bignum" href="tel:+19545550163">(954) 555-0163</a>
+          <span class="bignum-note">A real person answers, 7am to 9pm, seven days.</span>
+        </div>
+        <div class="ticket" id="prices">
+          <h2>Upfront prices</h2>
+          <p class="sm">Common jobs. You approve the price before we start.</p>
+          <table>
+            <tr><td>Service call and diagnosis</td><td>$89</td></tr>
+            <tr><td>Capacitor replaced</td><td>$185</td></tr>
+            <tr><td>Drain line cleared</td><td>$129</td></tr>
+            <tr><td>Refrigerant top-up</td><td>from $160</td></tr>
+          </table>
+          <p class="foot">Diagnosis fee is waived if we do the repair.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="signs">
+      <div class="wrap">
+        <h2>When to call before it gets worse</h2>
+        <p class="lede">Most Florida AC failures give a warning first. Catching it early is usually the cheaper fix.</p>
+        <ul class="sign-list">
+          <li><b>1</b><div><strong>Air is blowing, but not cold</strong><span>Often a capacitor or low refrigerant.</span></div></li>
+          <li><b>2</b><div><strong>Water near the indoor unit</strong><span>Usually a clogged drain line. Turn the system off.</span></div></li>
+          <li><b>3</b><div><strong>Clicking, humming or buzzing</strong><span>Electrical parts wearing out. Worth a look this week.</span></div></li>
+          <li><b>4</b><div><strong>Power bill jumped</strong><span>Dirty coils or a struggling motor working overtime.</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="plans" id="plan">
+      <div class="wrap plan-row">
+        <div>
+          <h2>The twice-a-year tune-up</h2>
+          <p class="lede">Before summer and after. Keeps the system efficient and catches small problems while they're still small.</p>
+        </div>
+        <div class="plan-box">
+          <div class="price">$15<small> / month</small></div>
+          <ul>
+            <li>Two full tune-ups a year</li>
+            <li>Drain line flush each visit</li>
+            <li>Priority booking in a heat wave</li>
+            <li>15% off any repair</li>
+          </ul>
+          <a class="phone-btn" href="tel:+19545550163">Sign up by phone</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="area" id="area">
+      <div class="wrap">
+        <h2>Where our trucks go</h2>
+        <p class="lede">Based in Pembroke Pines, covering southwest Broward.</p>
+        <div class="chips"><span>Pembroke Pines</span><span>Miramar</span><span>Hollywood</span><span>Davie</span><span>Cooper City</span><span>Weston</span><span>Southwest Ranches</span></div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <h2>Hot house? Call now.</h2>
+        <a href="tel:+19545550163">(954) 555-0163</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>© 2026 Northbound Air (fictional) · Pembroke Pines, FL</span><span>Sample design by <a href="/">Clear Climb Web</a></span></div></footer>
+  <script>if (location.hash === '#preview') document.body.classList.add('preview');</script>
+</body>
+</html>

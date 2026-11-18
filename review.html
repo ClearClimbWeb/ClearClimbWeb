@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave a review | Clear Climb Web</title>
+  <meta name="description" content="Worked with Clear Climb Web on your website? Leave a short review. It helps other Florida businesses decide." />
+  <meta property="og:image" content="https://clearclimbweb.github.io/og-image.jpg" />
+  <link rel="icon" type="image/png" href="logo-circle.png" />
+  <link rel="stylesheet" href="page.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    form { display: grid; gap: 16px; margin-top: 28px; max-width: 560px; }
+    label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: 6px; }
+    input, textarea { width: 100%; font: inherit; padding: 12px 14px; border: 1.5px solid #cfcabd; border-radius: 6px; min-height: 50px; background: #fff; }
+    textarea { min-height: 140px; }
+    input:focus, textarea:focus { outline: none; border-color: #141414; box-shadow: 0 0 0 3px #b8f02a; }
+    .stars { display: flex; gap: 4px; border: 0; }
+    .stars button { background: none; border: 0; font-size: 2rem; line-height: 1; cursor: pointer; color: #c9c5b8; min-width: 44px; min-height: 44px; }
+    .stars button.on { color: #d99a00; }
+    .hp { position: absolute; left: -9999px; }
+    button[type=submit] { border: 0; cursor: pointer; font: inherit; font-weight: 700; justify-self: start; }
+    .form-status { font-weight: 700; min-height: 1.5em; }
+  </style>
+</head>
+<body>
+  <header><div class="wrap nav"><a class="brand" href="/"><img src="logo-circle.png" alt="" width="40" height="40" /><span>Clear <em>Climb</em> Web</span></a><a class="call" href="tel:+19547039683">(954) 703-9683</a></div></header>
+  <main><div class="wrap">
+    <h1>Worked with me? Leave a review.</h1>
+    <p>A few honest sentences help other business owners decide. I may show it on my site with your first name and business name.</p>
+    <form action="https://formspree.io/f/xnpddgkq" method="POST" id="review-form">
+      <input type="hidden" name="_subject" value="New review for Clear Climb Web" />
+      <input type="hidden" name="form_type" value="review" />
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <div><label for="r-name">Your name</label><input id="r-name" name="name" required autocomplete="name" /></div>
+      <div><label for="r-biz">Business</label><input id="r-biz" name="business" autocomplete="organization" /></div>
+      <fieldset class="stars" aria-label="Rating">
+        <legend class="hp">Rating</legend>
+        <button type="button" data-star="1" aria-label="1 star">★</button><button type="button" data-star="2" aria-label="2 stars">★</button><button type="button" data-star="3" aria-label="3 stars">★</button><button type="button" data-star="4" aria-label="4 stars">★</button><button type="button" data-star="5" aria-label="5 stars">★</button>
+      </fieldset>
+      <input type="hidden" name="rating" id="star-input" value="5" />
+      <div><label for="r-text">Your review</label><textarea id="r-text" name="review" required></textarea></div>
+      <button type="submit" class="btn">Send my review</button>
+      <p class="form-status" role="status"></p>
+    </form>
+  </div></main>
+  <footer><div class="wrap">© 2026 Clear Climb Web · <a href="/">Home</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></div></footer>
+  <script>
+    const input = document.getElementById('star-input');
+    const stars = document.querySelectorAll('[data-star]');
+    function setStars(n) { input.value = n; stars.forEach(b => { b.classList.toggle('on', +b.dataset.star <= n); b.setAttribute('aria-pressed', +b.dataset.star === n); }); }
+    stars.forEach(b => b.addEventListener('click', () => setStars(+b.dataset.star)));
+    setStars(5);
+    const form = document.getElementById('review-form');
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const s = form.querySelector('.form-status');
+      s.textContent = 'Sending...';
+      try {
+        const r = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (!r.ok) throw new Error();
+        s.textContent = 'Thanks for the review.'; form.reset(); setStars(5);
+      } catch { s.textContent = 'That did not send. Please call or text (954) 703-9683.'; }
+    });
+  </script>
+</body>
+</html>
