@@ -360,6 +360,13 @@
       .hero-stats { gap: 20px; }
     }
     @media (max-width: 1150px) { .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; } }
+    @media (max-width: 900px) {
+      #about > div { grid-template-columns: 1fr !important; gap: 40px !important; }
+      #about > div > div:last-child { padding: 28px !important; }
+      #leave-review form > div[style*="grid"] { grid-template-columns: 1fr !important; }
+      #cta { margin: 0 4% 60px; }
+    }
+    html, body { overflow-x: hidden; }
   </style>
 </head>
 <body>
