@@ -154,7 +154,7 @@
     .plan li::before { content: ""; position: absolute; left: 0; top: 13px; width: 10px; height: 1.5px; background: var(--muted); }
     .plan .cost { text-align: right; }
     .plan .cost strong { display: block; font-family: var(--head); font-weight: 800; font-size: var(--step-3); line-height: 1; }
-    .plan .cost span { font-size: 0.9rem; color: var(--muted); }
+    .plan .cost span { display: block; font-size: 0.9rem; color: var(--muted); }
     .plan .cost a { margin-top: 16px; }
     .extras { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
     .extras h3 { font-size: 1.25rem; margin-bottom: 6px; display: flex; gap: 10px; align-items: center; }
@@ -236,6 +236,7 @@
       .project.flip .shot { order: 0; }
       .plan { grid-template-columns: 1fr; gap: 16px; }
       .plan .cost { text-align: left; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+      .plan .cost span { display: inline; }
       .plan .cost a { margin-top: 0; }
       .route svg.path { display: none; }
       .steps { grid-template-columns: 1fr; gap: 0; border-left: 2px dotted #a3a4a6; margin-left: 8px; }
@@ -254,6 +255,7 @@
       .row2, .foot { grid-template-columns: 1fr; }
     }
     #mcb-widget-portal .mcb-pointer-events-auto.mcb-topmost { inset: auto 16px 16px auto !important; }
+    #mcb-widget-portal .mcb-pointer-events-auto.mcb-topmost > div { transform: none !important; margin-top: 0 !important; }
     @media (max-width: 560px) {
       #mcb-widget-portal .mcb-pointer-events-auto.mcb-topmost { inset: auto 12px 12px auto !important; }
       #mcb-widget-portal [class*="mcb-right-full"] { display: none !important; }
